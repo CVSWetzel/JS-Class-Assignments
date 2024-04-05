@@ -1,8 +1,43 @@
-/*
 
-Your code goes below.
+let x = 3;
+let y = 10;
+let z = 5;
+let name = 'Chynna';
+let greeting = 'HEY';
 
-*/
+function multiply(factor) {
+    x *= factor;
+}
+
+function modYBy(divisor) {
+    y %= divisor;
+}
+
+function opposite(number) {
+    z = -number;
+}
+
+function makeFullName(lastName) {
+    name += ' ' + lastName;
+}
+
+function yellAt(string) {
+    greeting += ', ' + string + '!';
+}
+
+module.exports = {
+    x,
+    y,
+    z,
+    name,
+    greeting,
+    multiply,
+    modYBy,
+    opposite,
+    makeFullName,
+    yellAt
+};
+
 
 
 
