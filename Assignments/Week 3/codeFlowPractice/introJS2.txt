@@ -7,15 +7,24 @@ b = b + a; // Line 6
 
 // What is the value of a...
 // ... after line 3 executes?
-
+After line 3: a = 9
 
 
 // ... after line 4 executes?
-
+After line 4: b = 10
 
 
 // ... after line 5 executes?
-
+After line 5: a = 90
 
 
 // ... after line 6 executes?
+After line 6: b = 100
+
+
+
+
+
+
+
+
