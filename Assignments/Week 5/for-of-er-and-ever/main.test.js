@@ -1,93 +1,104 @@
-/******************
- * YOUR CODE HERE *
- ******************/
-const addAll = function(arr){
-  let sum = 0
-  for(let num of arr){
-    sum += num
+// Function implementations
+function addAll(numbers) {
+  let sum = 0;
+  for (const num of numbers) {
+      sum += num;
   }
-  return sum
-}
-const countSpaces = function (str){
-  let count = 0
-  for(let char of str){
-    if(char === ' '){
-      count++
-    }
-  }
-  return count
+  return sum;
 }
 
-const countTrues = function(booleans){
-  let count = 0
-  for(let bool of booleans){
-    if(bool === true){
-      count++
-    }
+function countSpaces(str) {
+  let spaceCount = 0;
+  for (const char of str) {
+      if (char === ' ') {
+          spaceCount++;
+      }
   }
-  return count
+  return spaceCount;
 }
 
-const makeFriendly = function(paragraph){
-  let result = ''
-  for (let char of paragraph){
-    if(char === '.'){
-      result += '!'
-    }else{
-      result += char
-    }
+function countTrues(bools) {
+  let trueCount = 0;
+  for (const bool of bools) {
+      if (bool === true) {
+          trueCount++;
+      }
   }
-  return result
+  return trueCount;
 }
 
-const cubeAll = function(arr){
-  let result = []
-  for (let num of arr){
-    result.push(num ** 3)
+function makeFriendly(paragraph) {
+  let friendlyParagraph = '';
+  for (const char of paragraph) {
+      if (char === '.') {
+          friendlyParagraph += '!';
+      } else {
+          friendlyParagraph += char;
+      }
   }
-  return result
+  return friendlyParagraph;
 }
 
-const addNoises = function(arr){
-  let result = []
-  for(animal of arr){
-    if (animal === 'Fido' || animal === 'Rolph' || animal === 'Maisie') {
-      result.push(animal + ' says "Woof!"')
-    } else if (animal === 'Garfield' || animal === 'Heathcliff') {
-      result.push(animal + ' says "Meow!"')
-    } else if (animal === 'Barnie' || animal === 'Sharp Tooth') {
-      result.push(animal + ' says "ROWR."')
-    }
+function cubeAll(numbers) {
+  const cubedNumbers = [];
+  for (const num of numbers) {
+      cubedNumbers.push(num ** 3);
   }
-  return result
+  return cubedNumbers;
 }
 
-const womenOnly = function(arr){
-  const women = [];
-  for(let name of arr){
-    if(name.endsWith('F')){
-      women.push(name)
-    }
+function addNoises(animals) {
+  const noises = {
+      'dog': 'Woof',
+      'cat': 'Meow',
+      'duck': 'Quack',
+      'lion': 'Roar'
+  };
+
+  const animalNoises = [];
+  for (const animal of animals) {
+      const animalName = animal.split(' ')[0];
+      if (noises.hasOwnProperty(animalName)) {
+          animalNoises.push(animal + ' ' + noises[animalName]);
+      }
   }
-  return women;
+  return animalNoises;
 }
 
-const integersOnly = function(numbers){
-  const integers = []
-  for(let num of numbers){
-    if(num % 1 === 0){
-      integers.push(num)
-    }
+function womenOnly(namesAndGenders) {
+  const womenNames = [];
+  for (const nameAndGender of namesAndGenders) {
+      if (nameAndGender.endsWith('F')) {
+          womenNames.push(nameAndGender);
+      }
   }
-  return integers
+  return womenNames;
 }
 
+function integersOnly(numbers) {
+  const integers = [];
+  for (const num of numbers) {
+      if (Number.isInteger(num)) {
+          integers.push(num);
+      }
+  }
+  return integers;
+}
+
+module.exports = {
+  addAll,
+  countSpaces,
+  countTrues,
+  makeFriendly,
+  cubeAll,
+  addNoises,
+  womenOnly,
+  integersOnly
+};
 
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
  *********************************/
-
-
 
 if (typeof addAll === 'undefined') {
   addAll = undefined;
@@ -131,6 +142,7 @@ const {
   addNoises,
 } = require('./your-functions'); // Import your functions
 
+// Test cases
 describe('addAll', () => {
   it(`adds all the numbers in the array`, () => {
     const nums1 = [5, 3, 7, -11, 1003];
@@ -363,5 +375,3 @@ describe('integersOnly', () => {
     assert.deepStrictEqual(result, [4, 6, 9.0, 11]); // 9.0 is considered an integer
   });
 });
-
-
