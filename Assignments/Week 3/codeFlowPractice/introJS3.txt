@@ -5,15 +5,16 @@ let yelledGreeting = greeting + '!';
 let surprisedGreeting = "Oh! " + regularGreeting;
 
 // What is the value of greeting after line 1 executes?
-
+After line 1: greeting = "Hello"
 
 // What is the value of regularGreeting after line 2 executes?
-
+After line 2: regularGreeting = "Hello."
 
 // What is the value of greeting after line 3 executes?
-
+After line 3: greeting = "Hi"
 
 // What is the value of yelledGreeting after line 4 executes?
-
+After line 4: yelledGreeting = "Hi!"
 
 // What is the value of surprisedGreeting after line 5 executes?
+After line 5: surprisedGreeting = "Oh! Hello."
