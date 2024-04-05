@@ -1,6 +1,19 @@
 /******************
  * YOUR CODE BELOW *
  ******************/
+let myFirstName = 'Chynna';
+let myLastName = 'Wetzel';
+let myFavoriteCeleb = 'Jim Carey';
+let mySentence = `My name is ${myFirstName} ${myLastName} and my favorite celebrity is ${myFavoriteCeleb}.`;
+let myLuckyNum = 13;
+let myAge = 31;
+let myHeight = 69.5; 
+let myFavoriteYear = 2023;
+
+
+let mySum = 5 + 2317 + 36;
+let myProduct = (232 * 43 / 2) + 4;
+let myHeightAndAge = myAge + myHeight;
 
 
 /*********************************************************************************************************************
