@@ -1,11 +1,39 @@
 /**********************************
  * YOUR CODE GOES HERE THIS TIME! *
  **********************************/
-let x = 3;
 
-function double(){
-  x = x*2
+let x = 3;
+let y = 10;
+let z = 4;
+let greeting = 'hello';
+let firstName = 'Chynna'; 
+let callStatus = 'ringing';
+
+
+function double() {
+    x *= 2;
 }
+
+function triple() {
+    y *= 3;
+}
+
+function square() {
+    z *= z;
+}
+
+function beNice() {
+    greeting = 'hello ' + firstName;
+}
+
+function changeName() {
+    firstName = 'Danger';
+}
+
+function hangUp() {
+    callStatus = 'call ended';
+}
+
 /*********************************************************************************************************************
 
  * CODE BELOW HERE IS FOR INTERNAL USE ONLY! IT ENSURES THAT THE TESTING *
