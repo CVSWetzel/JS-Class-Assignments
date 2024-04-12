@@ -1,39 +1,50 @@
-// YOUR CODE GOES HERE!!!
-/*************************/
-const getFirstName = (obj) => obj.firstName
+function getFirstName(person) {
+  return person.firstName;
+}
 
-const getLastName = (obj) => obj.lastName
+function getLastName(person) {
+  return person.lastName;
+}
 
-const getFullName = (obj) =>
-  `${obj.firstName} ${obj.lastName}`
+function getFullName(person) {
+  return `${person.firstName} ${person.lastName}`;
+}
 
-const setFirstName = (obj, name) => obj.firstName = name
+function setFirstName(person, newFirstName) {
+  person.firstName = newFirstName;
+  return person;
+}
 
-const setAge = (obj, num) => obj.age = num
+function setAge(person, newAge) {
+  person.age = newAge;
+  return person;
+}
 
-const giveBirthday = (obj) => {
-  if(!obj.age){
-    obj.age = 1
-  }else{
-    obj.age += 1
+function giveBirthday(person) {
+  if (person.age !== undefined) {
+    person.age += 1;
+  } else {
+    person.age = 1;
   }
+  return person;
 }
 
-const marry = (person1, person2) => {
-  person1.married = true
-  person2.married = true
-  person1.spouseName = getFullName(person2)
-  person2.spouseName = getFullName(person1)
+function marry(person1, person2) {
+  person1.married = true;
+  person2.married = true;
+  person1.spouseName = getFullName(person2);
+  person2.spouseName = getFullName(person1);
 }
 
-const divorce = (person1, person2) => {
-  person1.married = false
-  person2.married = false
-  delete person1.spouseName
-  delete person2.spouseName
+function divorce(person1, person2) {
+  person1.married = false;
+  person2.married = false;
+  delete person1.spouseName;
+  delete person2.spouseName;
 }
 
-/****************************/
+module.exports = { getFirstName, getLastName, getFullName, setFirstName, setAge, giveBirthday, marry, divorce };
+
 // Our code here. Don't touch!
 if (typeof getFirstName === 'undefined') {
   getFirstName = undefined
