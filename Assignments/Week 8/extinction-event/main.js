@@ -1,27 +1,45 @@
-const strikeThrough = document.querySelectorAll('ol li')
-const eraseList = document.querySelectorAll('ul li')
-const dinos = document.querySelectorAll('img')
 
-for(let listItem of strikeThrough){
-    listItem.addEventListener('click', function (){
-        listItem.style.textDecoration = 'line-through'
-    })
+function applyStrikeThrough(element) {
+    element.style.textDecoration = 'line-through';
 }
 
-for(let listItem of eraseList){
-    listItem.addEventListener('click', function(){
-        listItem.style.opacity = 0
-    })
+function changeOpacity(element, opacity) {
+    element.style.opacity = opacity;
 }
 
-for(let listItem of dinos){
-    listItem.addEventListener('click', function(){
-        listItem.style.width = "0px"
-    })
+
+function changeWidth(element, width) {
+    element.style.width = width;
 }
 
-document.getElementById('destroy-all').addEventListener('click', function (){
-    strikeThrough.forEach(listItem => listItem.style.textDecoration = 'line-through')
-    eraseList.forEach(listItem => listItem.style.opacity = 0)
-    dinos.forEach(listItem => listItem.style.width = '0px')
-})
+function applyEffects(elements, effectFunction) {
+    elements.forEach(element => {
+        effectFunction(element);
+    });
+}
+
+
+const strikeThroughItems = document.querySelectorAll('ol li');
+
+applyEffects(strikeThroughItems, applyStrikeThrough);
+
+
+const eraseListItems = document.querySelectorAll('ul li');
+
+applyEffects(eraseListItems, element => changeOpacity(element, 0));
+
+
+const dinosaurImages = document.querySelectorAll('.image-container img');
+
+applyEffects(dinosaurImages, element => changeWidth(element, '0px'));
+
+
+function destroyAllEffects() {
+    applyEffects(strikeThroughItems, applyStrikeThrough);
+    applyEffects(eraseListItems, element => changeOpacity(element, 0));
+    applyEffects(dinosaurImages, element => changeWidth(element, '0px'));
+}
+
+
+const destroyAllButton = document.getElementById('destroy-all');
+destroyAllButton.addEventListener('click', destroyAllEffects);
