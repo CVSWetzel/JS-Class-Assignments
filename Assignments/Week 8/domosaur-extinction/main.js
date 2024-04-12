@@ -1,50 +1,51 @@
-const plushTRex = document.querySelector('#rattle');
-
-const messWithMeParagraph = document.querySelector('p.mess-with-me');
-messWithMeParagraph.style.backgroundColor = 'lightgreen';
-
-const tRex = document.querySelector('#hide-me');
-tRex.style.display = 'none';
-
-//Challenge 1 solution
+// Challenge 1 solution
 const messWithMeWord = document.querySelector('span.mess-with-me');
 messWithMeWord.addEventListener('click', makeOrange);
-const makeOrange = function() {
+
+function makeOrange() {
     messWithMeWord.style.color = 'orange';
-    messWithMeWord.style.fontSize = '3em';
-  }
-//Challenge 2 solution
-const triceratops = document.querySelector('#triceratops');
-triceratops.addEventListener('click', giveRedBorder);
-const giveRedBorder = function() {
-triceratops.style.border = '3px solid red';
-triceratops.style.width = '324px';
+    messWithMeWord.style.fontSize = '40px';
 }
-//Challenge 3 solution
+
+// Challenge 2 solution
+const triceratops = document.querySelector('#hide-me');
+triceratops.addEventListener('click', giveRedBorder);
+
+function giveRedBorder() {
+    triceratops.style.border = '3px solid red';
+    triceratops.style.width = '324px';
+}
+
+// Challenge 3 solution
 const feathered = document.querySelector('#feathers');
 feathered.addEventListener('click', makeTransparent);
-const makeTransparent = function() {
-    feathered.style.opacity = 0.5;
-  }
-//Challenge 4 solution
-const toggle = document.querySelector('#toggle');
-const row = document.querySelector('#row');
-toggle.addEventListener('click', toggleRowBackground)
-const toggleRowBackground = function() {
-    if (row.style.backgroundColor === 'black') {
-      row.style.backgroundColor = 'white';
-    } else {
-      row.style.backgroundColor = 'black';
-    }
+
+function makeTransparent() {
+    feathered.style.opacity = '0.5'; // Set opacity as a string
 }
-//Challenge 5 solutions
+
+// Challenge 4 solution
+const toggle = document.querySelector('#toggle-background');
+const row = document.querySelector('#row');
+toggle.addEventListener('click', toggleRowBackground);
+
+function toggleRowBackground() {
+    let currentColor = row.style.backgroundColor;
+    // Switch to a color of your preference if the current color is not set or is white
+    row.style.backgroundColor = currentColor && currentColor !== 'white' ? 'lightblue' : 'white';
+}
+
+// Challenge 5 solution
 const ankylosaur = document.querySelector('#biggify');
 ankylosaur.addEventListener('mouseover', toggleSize);
 ankylosaur.addEventListener('mouseout', toggleSize);
-const toggleSize = function() {
+
+function toggleSize() {
     if (ankylosaur.style.width === '200px') {
-      ankylosaur.style.width = '162px';
+        ankylosaur.style.width = '162px';
     } else {
-      ankylosaur.style.width = '200px';
+        ankylosaur.style.width = '200px';
     }
-  }
+    // Add CSS transition for smoother size change
+    ankylosaur.style.transition = 'width 0.3s ease';
+}
