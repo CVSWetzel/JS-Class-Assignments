@@ -2,7 +2,7 @@ function isAdmin(user) {
     return user.userRole === 'ADMIN';
 }
 function getEmail(user) {
-    const email = user.firstName.charAt(0).toLowerCase() + user.lastName.toLowerCase() + '.prsvr@gmail.com';
+    const email = user.firstName.charAt(0).toLowerCase() + user.lastName.toLowerCase() + 'cwetzel.prsvr@gmail.com';
     return email;
 }
 function getPlaylistLength(playlist) {
